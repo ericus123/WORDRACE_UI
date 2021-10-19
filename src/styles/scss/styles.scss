@@ -1,0 +1,63 @@
+@import "./variables.scss";
+
+//TYPOGRAPHY
+.bg-green {
+  background-color: $green_color;
+}
+.bg-violet {
+  background-color: $violet_color;
+}
+.bd-radius-5 {
+  border-radius: 5px !important;
+}
+
+.bd-radius-10 {
+  border-radius: 10px !important;
+}
+
+.bd-radius-16 {
+  border-radius: 16px;
+}
+
+.bd-radius-22 {
+  border-radius: 22px;
+}
+.txt-white {
+  color: white;
+}
+.txt-black {
+  color: black;
+}
+.txt-green {
+  color: $green_color;
+}
+.txt-fonweight-100 {
+  font-weight: 100;
+}
+.txt-fonweight-200 {
+  font-weight: 200;
+}
+.txt-fonweight-200 {
+  font-weight: 200;
+}
+.txt-fonweight-300 {
+  font-weight: 300;
+}
+.txt-fonweight-400 {
+  font-weight: 400;
+}
+.txt-fonweight-500 {
+  font-weight: 500;
+}
+.txt-fonweight-600 {
+  font-weight: 600;
+}
+.txt-fonweight-700 {
+  font-weight: 700;
+}
+.txt-fonweight-800 {
+  font-weight: 800;
+}
+.txt-fonweight-900 {
+  font-weight: 800;
+}
