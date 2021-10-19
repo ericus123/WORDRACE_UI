@@ -1,0 +1,53 @@
+@import "../../styles//scss/variables.scss";
+.form-container {
+  margin-top: 5%;
+}
+.auth-form {
+  width: 100%;
+  padding: 15%;
+}
+.form-input {
+  height: 7vh;
+  &:focus {
+    border: 2px solid $violet-color !important;
+  }
+  border: 1px solid $violet-color;
+  outline: none;
+}
+.form-row {
+  margin: 10% 0% 10% 0%;
+}
+.form-btn {
+  height: 6vh;
+  width: 100%;
+  border: 1px solid $violet-color;
+}
+.error-text {
+  color: red;
+}
+
+.form-checkbox {
+  height: 1.25rem !important;
+  width: 1.25rem !important;
+  border: 2px solid $violet-color !important;
+  color: red !important;
+  fill: yellow !important;
+  background-color: #eee !important;
+  &:checked {
+    &::after {
+      background-color: $violet-color !important;
+    }
+  }
+}
+input[type="checkbox"] {
+  filter: invert(20%) hue-rotate(18deg) brightness(1.7);
+  border: 2px solid red;
+  height: 1.25rem;
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+.aggree-container {
+  display: flex;
+  height: 100%;
+}
