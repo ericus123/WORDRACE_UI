@@ -1,7 +1,12 @@
 import "./App.scss";
+import "./styles/scss/styles.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import "./styles/scss/variables.scss";
+import "antd/dist/antd.css";
+import Routes from "./routes";
 
 function App() {
-  return <div className="App"></div>;
+  return <Routes />;
 }
 
 export default App;
