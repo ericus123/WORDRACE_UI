@@ -1,11 +1,12 @@
 @import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 //TYPOGRAPHY
 .bg-green {
   background-color: $green_color;
 }
 .bg-violet {
-  background-color: $violet_color;
+  background-color: $violet_color !important;
 }
 .bd-radius-5 {
   border-radius: 5px !important;
@@ -31,33 +32,42 @@
 .txt-green {
   color: $green_color;
 }
-.txt-fonweight-100 {
+.txt-violet {
+  color: $violet-color;
+}
+.txt-fontweight-100 {
   font-weight: 100;
 }
-.txt-fonweight-200 {
+.txt-fontweight-200 {
   font-weight: 200;
 }
-.txt-fonweight-200 {
+.txt-fontweight-200 {
   font-weight: 200;
 }
-.txt-fonweight-300 {
+.txt-fontweight-300 {
   font-weight: 300;
 }
-.txt-fonweight-400 {
+.txt-fontweight-400 {
   font-weight: 400;
 }
-.txt-fonweight-500 {
+.txt-fontweight-500 {
   font-weight: 500;
 }
-.txt-fonweight-600 {
+.txt-fontweight-600 {
   font-weight: 600;
 }
-.txt-fonweight-700 {
+.txt-fontweight-700 {
   font-weight: 700;
 }
-.txt-fonweight-800 {
+.txt-fontweight-800 {
   font-weight: 800;
 }
-.txt-fonweight-900 {
+.txt-fontweight-900 {
   font-weight: 800;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.txt-fontfamily-gaming {
+  font-family: "Press Start 2P", cursive !important;
 }
