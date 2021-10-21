@@ -5,7 +5,7 @@ import game_image from "../../assets/letters-auth.jpg";
 const AuthLayout = ({ children }) => {
   return (
     <div className="auth-page">
-      <Row className="auth-container bg-violet">
+      <Row className="auth-container">
         <Col className="col1" lg={6}>
           {children}
         </Col>

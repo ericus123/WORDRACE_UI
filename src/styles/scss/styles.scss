@@ -1,11 +1,12 @@
 @import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 //TYPOGRAPHY
 .bg-green {
   background-color: $green_color;
 }
 .bg-violet {
-  background-color: $violet_color;
+  background-color: $violet_color !important;
 }
 .bd-radius-5 {
   border-radius: 5px !important;
@@ -66,4 +67,7 @@
 }
 .cursor-pointer {
   cursor: pointer !important;
+}
+.txt-fontfamily-gaming {
+  font-family: "Press Start 2P", cursive !important;
 }

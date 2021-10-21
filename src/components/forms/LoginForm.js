@@ -50,6 +50,7 @@ const LoginForm = ({ handleFormChange }) => {
                 onBlur={handleBlur}
                 value={values.username}
                 className="form-input bd-radius-5"
+                placeholder="John96"
               />
               <span className="error-text">{errors.username}</span>
             </Row>
@@ -61,6 +62,7 @@ const LoginForm = ({ handleFormChange }) => {
                 onBlur={handleBlur}
                 value={values.password}
                 className="form-input bd-radius-5"
+                placeholder="********"
               />
               <span className="error-text">
                 {errors.password && touched.password && errors.password}
