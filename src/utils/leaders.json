@@ -2,37 +2,51 @@
   {
     "position": 4,
     "username": "ToliX",
-    "level": 10
+    "level": 10,
+    "speed": 8,
+    "score": 568
   },
   {
     "position": 5,
     "username": "Bitox",
-    "level": 8
+    "level": 8,
+    "speed": 4,
+    "score": 523
   },
   {
     "position": 6,
     "username": "Lazer",
-    "level": 3
+    "level": 3,
+    "speed": 9,
+    "score": 489
   },
   {
     "position": 7,
     "username": "kimyo",
-    "level": 8
+    "level": 8,
+    "speed": 4,
+    "score": 436
   },
   {
     "position": 8,
     "username": "Tigerl",
-    "level": 6
+    "level": 6,
+    "speed": 2,
+    "score": 417
   },
 
   {
     "position": 9,
     "username": "Muna",
-    "level": 4
+    "level": 4,
+    "speed": 12,
+    "score": 274
   },
   {
     "position": 10,
     "username": "Elhad",
-    "level": 6
+    "level": 6,
+    "speed": 4,
+    "score": 129
   }
 ]

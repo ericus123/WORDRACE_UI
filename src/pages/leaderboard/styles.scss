@@ -2,7 +2,7 @@
 
 .leaderboard {
   background: white;
-  margin: 5%;
+  margin: 0% 5% 5% 5%;
   width: 90%;
   box-shadow: inset 0 0 20px $violet-color;
   height: auto;
@@ -69,4 +69,12 @@
 .leader-level {
   color: $green_color;
   font-size: 1.2em;
+}
+.game-back {
+  font-size: 1.4em;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+    transition: 0.3s ease-in-out;
+  }
 }

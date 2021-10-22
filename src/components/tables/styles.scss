@@ -1,7 +1,7 @@
 @import "../../styles/scss/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 .leaders-table {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: $violet-color;
   box-shadow: inset 0 0 20px $violet-color;
   font-family: "Press Start 2P", cursive !important;
@@ -35,8 +35,13 @@
   color: red;
 }
 .leader-level {
+  color: $green_color;
+}
+.leader-speed {
   &::after {
     content: "X";
   }
-  color: $green_color;
+}
+.leader-score {
+  color: $violet-color;
 }
