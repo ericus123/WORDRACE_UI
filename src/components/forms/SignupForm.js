@@ -1,11 +1,13 @@
 import { Formik } from "formik";
 import { Col, Row } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import "./styles.scss";
+import { signupRequest } from "../../redux/actions/auth";
+import { SimpleSpinner } from "../loaders";
 
 const SignupForm = ({ handleFormChange }) => {
-  const history = useHistory();
-
+  const isLoading = useSelector((state) => state.signupReducer.isLoading);
+  const dispatch = useDispatch();
   return (
     <div className="form-container">
       <Formik
@@ -27,11 +29,9 @@ const SignupForm = ({ handleFormChange }) => {
 
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values) => {
+          delete values["terms"];
+          dispatch(signupRequest(values));
         }}
       >
         {({
@@ -41,7 +41,6 @@ const SignupForm = ({ handleFormChange }) => {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting,
         }) => (
           <form onSubmit={handleSubmit} className="auth-form">
             <h1 className="txt-violet text-center">Create Account</h1>
@@ -54,6 +53,7 @@ const SignupForm = ({ handleFormChange }) => {
                 onBlur={handleBlur}
                 value={values.username}
                 className="form-input bd-radius-5"
+                placeholder="John96"
               />
               <span className="error-text">{errors.username}</span>
             </Row>
@@ -65,6 +65,7 @@ const SignupForm = ({ handleFormChange }) => {
                 onBlur={handleBlur}
                 value={values.password}
                 className="form-input bd-radius-5"
+                placeholder="********"
               />
               <span className="error-text">
                 {errors.password && touched.password && errors.password}
@@ -82,16 +83,21 @@ const SignupForm = ({ handleFormChange }) => {
               </Col>
               <Col>
                 <span>
-                  Agree to{" "}
+                  Agree to
                   <span className="txt-violet txt-fontweight-700 cursor-pointer">
                     Terms
-                  </span>{" "}
+                  </span>
                   and{" "}
-                  <span className="txt-violet cursor-pointer"> Conditions</span>
+                  <span className="txt-violet cursor-pointer txt-fontweight-700">
+                    {" "}
+                    Conditions
+                  </span>
                 </span>
               </Col>
 
-              <span className="error-text">{errors.terms}</span>
+              <span className="error-text">
+                {errors.terms && touched.terms && errors.terms}
+              </span>
             </Row>
 
             <Row className="form-footer">
@@ -108,9 +114,9 @@ const SignupForm = ({ handleFormChange }) => {
                 <button
                   className="bg-violet txt-white form-btn bd-radius-5 txt-fontweight-700"
                   type="submit"
-                  disabled={isSubmitting}
-                  onClick={() => history.push("/play")}
+                  disabled={isLoading}
                 >
+                  {isLoading && <SimpleSpinner color="white" size={24} />}
                   SIGNUP
                 </button>
               </Col>

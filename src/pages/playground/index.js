@@ -20,6 +20,8 @@ import {
 import "./styles.scss";
 import { useHistory } from "react-router";
 import { gameSaveConfirm } from "../../components/modals";
+import { useDispatch, useSelector } from "react-redux";
+import { authRequest, logoutRequest } from "../../redux/actions/auth";
 
 const PlayGround = () => {
   // eslint-disable-next-line no-unused-vars
@@ -38,6 +40,9 @@ const PlayGround = () => {
   const [currentTime, setCurrentTime] = useState(null);
 
   const difference = time.minutes * 60 + time.seconds - currentTime;
+
+  const { user } = useSelector((state) => state.CheckAuthReducer);
+  const dispatch = useDispatch();
 
   const onChange = (input) => {
     console.log("Input changed", input);
@@ -101,6 +106,10 @@ const PlayGround = () => {
   };
   const history = useHistory();
 
+  useEffect(() => {
+    dispatch(authRequest());
+  }, []);
+
   return (
     <div>
       <h1
@@ -117,13 +126,20 @@ const PlayGround = () => {
           >
             Leaderboard <FaAward />
           </h2>
-          <FaUserAlt className="user-icon m-1" />
-          <h1 className=" auth-user txt-white m-1">AMANI Eric</h1>
-          <FaPowerOff
-            className="logout-btn"
-            title="Logout"
-            onClick={() => history.push("/auth")}
-          />
+          {user ? (
+            <>
+              {" "}
+              <FaUserAlt className="user-icon m-1" />
+              <h1 className=" auth-user txt-white m-1">{user.username}</h1>
+              <FaPowerOff
+                className="logout-btn"
+                title="Logout"
+                onClick={() => {
+                  dispatch(logoutRequest());
+                }}
+              />
+            </>
+          ) : null}
         </div>
         <h1 className="txt-green text-center txt-fontweight-700">WORD RACE</h1>
         <div className="game-controls m-2">
