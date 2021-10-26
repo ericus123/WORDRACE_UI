@@ -4,6 +4,7 @@ import HomePage from "../pages/home";
 import NotFound from "../pages/404";
 import AuthPage from "../pages/auth";
 import LeaderBoardPage from "../pages/leaderboard";
+import PlayGround from "../pages/playground";
 
 const Routes = () => {
   return (
@@ -11,6 +12,7 @@ const Routes = () => {
       <Switch>
         <Route exact path={RouteNames.home} component={HomePage} />
         <Route exact path={RouteNames.auth} component={AuthPage} />
+        <Route exact path={RouteNames.playground} component={PlayGround} />
         <Route
           exact
           path={RouteNames.leaderboard}

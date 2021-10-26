@@ -3,4 +3,5 @@ export const RouteNames = {
   about: "/about",
   leaderboard: "/leaderboard",
   auth: "/auth",
+  playground: "/play",
 };

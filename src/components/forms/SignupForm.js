@@ -1,8 +1,11 @@
 import { Formik } from "formik";
 import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 import "./styles.scss";
 
 const SignupForm = ({ handleFormChange }) => {
+  const history = useHistory();
+
   return (
     <div className="form-container">
       <Formik
@@ -106,6 +109,7 @@ const SignupForm = ({ handleFormChange }) => {
                   className="bg-violet txt-white form-btn bd-radius-5 txt-fontweight-700"
                   type="submit"
                   disabled={isSubmitting}
+                  onClick={() => history.push("/play")}
                 >
                   SIGNUP
                 </button>

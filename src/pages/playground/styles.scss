@@ -1,0 +1,158 @@
+@import "../../styles/scss/variables.scss";
+.playground {
+  width: 95%;
+  padding: 5%;
+  margin: 2.5%;
+  border-radius: 10px;
+}
+
+.playground-stats {
+  width: 100%;
+  justify-content: center;
+  gap: 10%;
+}
+.level {
+  height: 15vh;
+  max-width: 20%;
+  background-color: rgb(47, 194, 174);
+  border-radius: 10px;
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+  p {
+    font-size: 1.6em;
+  }
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+}
+.speed {
+  height: 15vh;
+  max-width: 20%;
+  background-color: rgb(189, 47, 194);
+  border-radius: 10px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+}
+.score {
+  height: 15vh;
+  max-width: 20%;
+  background-color: rgb(150, 255, 101);
+  border-radius: 10px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  p {
+    font-size: 1.6em;
+  }
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+}
+.sound-icon {
+  font-size: 4rem;
+  color: $green_color;
+  cursor: pointer;
+}
+.words-wrapper {
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+  margin: 3%;
+
+  .auth-user {
+    border: 3px solid black;
+    padding: 0.5% 2.5% 0.5% 2.5%;
+    border-radius: 2px;
+  }
+}
+.playground-header {
+  display: flex;
+  gap: 0.5%;
+  justify-content: right;
+  h1 {
+    font-size: 1.4em;
+    color: rgb(219, 216, 216);
+    justify-self: right;
+  }
+}
+.logout-btn {
+  color: red;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.user-icon {
+  font-size: 1.4rem;
+  color: rgb(219, 216, 216);
+}
+.lead-title {
+  color: $green_color;
+  margin-right: auto;
+  background-color: rgb(189, 47, 194);
+  color: white;
+  padding: 0.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+    transition: 0.3s ease-in-out;
+  }
+}
+.start-button {
+  border: none;
+  background-color: rgb(189, 47, 194);
+  box-shadow: 0px 5px 0px 0px #ce4646;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 15%;
+  height: 10vh;
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+}
+.timeleft-title {
+  font-size: 1.6em;
+  text-align: center;
+  color: $green_color;
+}
+.remaining-time {
+  color: $green_color;
+  text-align: center;
+}
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+}
+.done-text {
+  background-color: $green_color;
+}
