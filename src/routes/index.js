@@ -5,6 +5,7 @@ import NotFound from "../pages/404";
 import AuthPage from "../pages/auth";
 import LeaderBoardPage from "../pages/leaderboard";
 import PlayGround from "../pages/playground";
+import Footer from "../components/footer";
 
 const Routes = () => {
   return (
@@ -21,6 +22,7 @@ const Routes = () => {
 
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 };

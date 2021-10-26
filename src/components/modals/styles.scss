@@ -1,0 +1,29 @@
+@import "../../styles//scss/variables.scss";
+.instructions-title {
+  font-size: 1.5em;
+  text-align: center;
+}
+.modal-span {
+  font-size: 1.3em;
+}
+.continue-btn {
+  height: 5vh;
+  border: 1px solid $violet_color;
+  padding-left: 2%;
+  padding-right: 2%;
+
+  border-radius: 2px;
+}
+.cancel-btn {
+  height: 5vh;
+  border: 2px solid $violet_color;
+  background-color: white;
+  color: $violet_color;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 2px;
+  margin-right: 1%;
+}
+.conf-txt {
+  font-size: 1.2em;
+}
