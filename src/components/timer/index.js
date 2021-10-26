@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import NotificationManager from "react-notifications/lib/NotificationManager";
 
 export const Timer = ({
   initialSeconds,
@@ -20,6 +21,7 @@ export const Timer = ({
         if (seconds === 0) {
           if (minutes === 0) {
             clearInterval(myInterval);
+            NotificationManager.error("Time is up, You failed!", "GAME OVER");
           } else {
             setMinutes(minutes - 1);
             setSeconds(59);

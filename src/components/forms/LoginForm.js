@@ -1,11 +1,13 @@
 import { Formik } from "formik";
 import { Col, Row } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { loginRequest } from "../../redux/actions/auth";
+import { SimpleSpinner } from "../loaders";
 import "./styles.scss";
 
 const LoginForm = ({ handleFormChange }) => {
-  const history = useHistory();
-
+  const isLoading = useSelector((state) => state.loginReducer.isLoading);
+  const dispatch = useDispatch();
   return (
     <div className="form-container">
       <Formik
@@ -14,8 +16,6 @@ const LoginForm = ({ handleFormChange }) => {
           const errors = {};
           if (!values.username) {
             errors.username = "Username is required";
-          } else if (values.username.length < 6) {
-            errors.username = "Must be between 6 and 10 characters";
           } else if (!values.password) {
             errors.password = "Password is required";
           } else if (values.password.length < 8) {
@@ -23,11 +23,8 @@ const LoginForm = ({ handleFormChange }) => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values) => {
+          dispatch(loginRequest(values));
         }}
       >
         {({
@@ -37,7 +34,6 @@ const LoginForm = ({ handleFormChange }) => {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting,
         }) => (
           <form
             onSubmit={handleSubmit}
@@ -86,10 +82,9 @@ const LoginForm = ({ handleFormChange }) => {
                 <button
                   className="bg-violet txt-white form-btn bd-radius-5 txt-fontweight-700"
                   type="submit"
-                  disabled={isSubmitting}
-                  onClick={() => history.push("/play")}
+                  disabled={isLoading}
                 >
-                  LOGIN
+                  {isLoading && <SimpleSpinner color="white" size={24} />} LOGIN
                 </button>
               </Col>
             </Row>
