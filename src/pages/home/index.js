@@ -29,10 +29,12 @@ const HomePage = () => {
         <Row>
           <Col className="mt-5">
             <p className="txt-white home-text">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.{" "}
+              <b className="txt-fontweight-500">Word Race</b> is a game designed
+              to improve QWERTY typing rate and efficiency. Words appear one by
+              one at a rate that goes up as time progresses. There’s a limited
+              <b className="txt-fontweight-500"> “stack space”</b> that fills up
+              after a certain amount of words have appeared. Once a player types
+              a word correctly, that word is removed from the stack.
             </p>
           </Col>
           <Col>

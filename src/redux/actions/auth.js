@@ -40,6 +40,7 @@ export const signupRequest = (payload) => async (dispatch) => {
 };
 
 export const authRequest = () => async (dispatch) => {
+  dispatch({ type: types.CHECK_AUTH_REQUEST_LOADING, payload: true });
   try {
     const res = await http.get("/api/auth/check-login/");
     const { user } = res.data;
@@ -47,12 +48,13 @@ export const authRequest = () => async (dispatch) => {
   } catch (error) {
     window.location.assign("/auth");
   }
+  dispatch({ type: types.CHECK_AUTH_REQUEST_LOADING, payload: false });
 };
 export const logoutRequest = () => async (dispatch) => {
   try {
+    dispatch({ type: types.LOGOUT_REQUEST });
     localStorage.clear();
-    window.location.reload();
-    dispatch(authRequest());
+    window.location.reload(true);
   } catch (error) {
     window.location.assign("/auth");
   }

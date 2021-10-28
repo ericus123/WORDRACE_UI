@@ -31,10 +31,26 @@ export const signupReducer = (state = initialState, action) => {
 
 export const CheckAuthReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.CHECK_AUTH_REQUEST_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
+      };
     case types.CHECK_AUTH_REQUEST:
       return {
         ...state,
         user: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const logoutReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.LOGOUT_REQUEST:
+      return {
+        user: null,
       };
     default:
       return state;

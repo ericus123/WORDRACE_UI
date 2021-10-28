@@ -2,14 +2,31 @@ import { Card } from "antd";
 import { Col, Row } from "react-bootstrap";
 import LeadersTable from "../../components/tables/LeadersTable";
 import { medals } from "../../utils/medals";
-import data from "../../utils/leaders.json";
 import podium_image from "../../assets/podium.png";
 import "./styles.scss";
 import { FaArrowLeft } from "react-icons/fa";
 import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { leaderboardRequest } from "../../redux/actions/scores";
+import game_img1 from "../../assets/game_img1.jpg";
+import game_img2 from "../../assets/game_img2.jpg";
+import game_img3 from "../../assets/game_img3.jpg";
 
 const LeaderBoardPage = () => {
   const history = useHistory();
+  const { leaders } = useSelector((state) => state.leaderboardReducer);
+  const sorted_leaders = leaders?.sort(
+    (a, b) => b.scores.scores - a.scores.scores
+  );
+  const game_images = [game_img1, game_img2, game_img3];
+  const first_three = sorted_leaders.slice(0, 3);
+
+  const rest_7 = sorted_leaders.slice(3, leaders.length);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(leaderboardRequest());
+  }, []);
   return (
     <div>
       <h1
@@ -26,7 +43,7 @@ const LeaderBoardPage = () => {
         </div>
 
         <Row className="leaderboard-row">
-          {[1, 2, 3].map((key) => (
+          {first_three.map((value, key) => (
             <Col key={key}>
               <Card
                 className="leader-card bd-radius-10 bg-violet"
@@ -36,28 +53,45 @@ const LeaderBoardPage = () => {
                   <img
                     alt="example"
                     className="leader-avatar"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                    src={game_images[key]}
                   />
                 }
               >
                 <div className="place-icon">
-                  <img src={medals[key]} />
+                  <img src={medals[key + 1]} />
                 </div>
                 <h1 className="leader-name txt-fontfamily-gaming text-center txt-white">
-                  Ericus
+                  <span
+                    className="txt-white txt-fontfamily-gaming"
+                    style={{ fontSize: ".8em" }}
+                  >
+                    {value.username}
+                  </span>
                 </h1>
                 <h1 className="leader-score txt-fontfamily-gaming text-center">
-                  172
+                  <span
+                    className="txt-white txt-fontfamily-gaming"
+                    style={{ fontSize: ".8em" }}
+                  >
+                    Score:
+                  </span>
+                  {value.scores.scores}
                 </h1>
                 <h1 className="leader-level txt-fontfamily-gaming text-center">
-                  16
+                  <span
+                    className="txt-white txt-fontfamily-gaming"
+                    style={{ fontSize: ".8em" }}
+                  >
+                    Lev:
+                  </span>
+                  {value.scores.level}
                 </h1>
               </Card>
             </Col>
           ))}
         </Row>
         <Row className="table-row">
-          <LeadersTable data={data} />
+          <LeadersTable data={rest_7} />
         </Row>
       </div>
       <br />
