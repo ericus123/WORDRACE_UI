@@ -62,7 +62,7 @@ This app is deployed on netlify for frontend and heroku for backend
 
 ## Demo
 
-[https://wordrace-dev.netlify.app/](https://wordrace-dev.netlify.app/)
+[https://wordrace-dev.netlify.app/](https://wordrace.netlify.app/)
 
 ## Screenshots
 
